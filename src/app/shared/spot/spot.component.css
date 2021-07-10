@@ -1,0 +1,14 @@
+.active{
+  background-color: purple;
+}
+.whiteBox{
+  background-color: white;
+}
+div{
+    width: 25px;
+    height: 25px;
+}
+.blackBox{
+  border: none;
+  background-color: black;
+}

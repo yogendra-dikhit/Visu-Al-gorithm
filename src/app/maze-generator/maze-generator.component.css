@@ -1,0 +1,17 @@
+.table{
+    display: table;
+    border: 1px cyan solid;
+    width: 1250px;
+    padding-left: 13px;
+    /* background-color: rgb(0, 0, 0); */
+}
+.column{
+    width: 25px;
+    height: 25px;
+    /* border: 1px black solid; */
+}
+.maze{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,10 @@
+
+.container-fluid{
+    margin: 10px;
+    display: inline-block;
+    align-content: space-between;
+    max-width: -webkit-fill-available;
+}
+.mat-card-content{
+    display: flex;
+}

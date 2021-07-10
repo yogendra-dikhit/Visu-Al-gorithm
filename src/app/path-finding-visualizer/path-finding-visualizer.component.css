@@ -1,0 +1,24 @@
+
+.mat-card{
+    display: flex;
+    max-width: fit-content;
+    padding: 10px !important;
+}
+.path-finder {
+    display: flex;
+    justify-content:center ;
+} 
+.table{
+    display: table;
+    /* border: 1px cyan solid; */
+    margin: 10px 30px;
+}
+.col{
+    width: 25px;
+    height: 25px;
+    /* border: 1px black solid; */
+    padding: 0px;
+}
+.row{
+    flex-wrap: nowrap !important;
+}

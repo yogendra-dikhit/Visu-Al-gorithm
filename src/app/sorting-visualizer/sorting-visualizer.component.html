@@ -1,0 +1,16 @@
+<app-toolbar
+  #toolbar
+  [methods]="methods"
+  (onReset)="setup()"
+  (onChangeSlider)="changeSlider($event)"
+  (onRunVisualizer)="RunSorter($event)"
+  (onRunnerSpeedChange)="changeRunnerSpeed($event)"
+  (onChangeRunningState)="changeRunningState($event)"
+>
+</app-toolbar>
+<mat-card class="row sketch-box">
+  <div *ngFor="let box of boxes; let i = index">
+    <div [ngClass]="" class="boxes" [ngStyle]="{ height: getHeight(i) }"></div>
+    <!-- &nbsp;&nbsp;<span class="box-values">{{box}}</span> -->
+  </div>
+</mat-card>

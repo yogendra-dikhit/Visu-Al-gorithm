@@ -1,0 +1,16 @@
+<app-toolbar #toolbar [methods]="methods" [isSliderVisible]="sliderVisibility" (onReset)="setup()" 
+(onRunVisualizer)="RunVisualizer($event)" (onRunnerSpeedChange)="changeRunnerSpeed($event)" 
+(onChangeRunningState)="changeRunningState($event)">
+</app-toolbar>
+<div class="path-finder">
+    <mat-card>
+        <div class="table">
+            <div class="row" *ngFor="let row of grid" >
+                <div class="col" *ngFor="let column of row" (mousedown)="onmouseDouwn(column)" (mouseenter)="onmouseEnter(column)"
+                 (mouseup)="onmouseUp(column)">
+                    <app-box [boxVal]="column" ></app-box>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>

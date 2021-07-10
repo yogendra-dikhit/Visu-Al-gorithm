@@ -1,0 +1,15 @@
+<app-toolbar #toolbar [methods]="methods" [isSliderVisible]="sliderVisibility" (onReset)="setup()"
+ (onRunVisualizer)="RunVisualizer($event)" (onRunnerSpeedChange)="changeRunnerSpeed($event)"
+ (onChangeRunningState)="changeRunningState($event)">
+</app-toolbar>
+<div class="maze">
+    <mat-card>
+        <div class="table">
+            <div class="row" *ngFor="let row of grid">
+                <div class="column" *ngFor="let col of row">
+                    <app-spot [spotVal]="col" ></app-spot>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>

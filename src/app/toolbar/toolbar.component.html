@@ -1,0 +1,37 @@
+<mat-card class="toolbar sort-visualizer  col-12">
+    <mat-form-field>
+        <mat-label>Choose Method</mat-label>
+        <mat-select [(value)]="method" [required]="true">
+          <mat-option disabled>None</mat-option>
+          <mat-option *ngFor="let method of methods" [value]="method">{{method}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div *ngIf="isSliderVisible == 'block'; else pathFinderBlock">
+        <label *ngIf="method != ''; else noMethod">
+            {{getMethodName(method)}}
+        </label>
+        <ng-template #noMethod>
+            <label>Select Method</label>
+        </ng-template>
+    </div>
+    <ng-template #pathFinderBlock>
+        <label *ngIf="method != ''; else noMethod">
+            {{method}}
+        </label>
+        <ng-template #noMethod>
+            <label>Select Method</label>
+        </ng-template>
+    </ng-template>
+    <mat-form-field>
+        <mat-label>Choose Method</mat-label>
+        <mat-select [(value)]="runnerSpeed" (selectionChange)="speedChanged($event)">
+          <!-- <mat-option disabled>None</mat-option> -->
+          <mat-option *ngFor="let runnerSpeed of runnerSpeeds" [value]="runnerSpeed">{{runnerSpeed}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-label [ngStyle]="{display : isSliderVisible}">Number of Boxes:</mat-label>
+    <mat-slider [ngStyle]="{display : isSliderVisible}" [min]="10" [max]="60" [step]="5" [thumbLabel]="true" [(ngModel)]="numberOfBoxes" (change)="changeSlider()" [color]="sliderColor"></mat-slider>
+    <button [ngStyle]="{'display': !isVisualizerRunning ? 'inline-block' : 'none'}" mat-raised-button (click)="RunVisualizer()">Start</button>
+    <button [ngStyle]="{'display': isVisualizerRunning ? 'inline-block' : 'none'}" mat-raised-button (click)="StopVisualizer()">Stop</button>
+    <button mat-raised-button (click)="Reset()">Reset</button>
+</mat-card>

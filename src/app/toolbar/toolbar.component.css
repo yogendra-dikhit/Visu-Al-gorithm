@@ -1,0 +1,21 @@
+.mat-card-content{
+    display: flex;
+}
+.toolbar{
+    margin: 10px 0px;
+    display: flex;
+    justify-content:center ;
+    align-items: center !important;
+    max-width: -webkit-fill-available;
+    /* background-color: grey; */
+}
+.toolbar * {
+    padding: 0px 15px !important;
+    margin: 5px !important;
+}
+.mat-card {
+    padding: 0px !important;
+}
+.path-visualizer {
+    display: none !important;
+}

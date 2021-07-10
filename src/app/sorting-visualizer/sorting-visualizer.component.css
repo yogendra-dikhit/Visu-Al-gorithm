@@ -1,0 +1,17 @@
+.sketch-box {
+    height: 100%;
+    width: 100%;
+    background-color: darkgrey;
+    /* margin: 10px 0px; */
+    padding: 10px 10px;
+    margin-left: 0px;
+    display: flex !important;
+}
+.boxes {
+    width: 20px;
+    background-color: #555;
+    margin: 1px 1px;
+}
+.box-values {
+    font-size: 1.5rem;
+}
