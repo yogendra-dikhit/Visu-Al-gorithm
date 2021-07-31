@@ -1,17 +1,15 @@
-.table{
-    display: table;
-    border: 1px cyan solid;
-    width: 1250px;
-    padding-left: 13px;
-    /* background-color: rgb(0, 0, 0); */
+.table {
+  display: table;
+  border: 1px cyan solid;
+  width: 1200px;
+  padding-left: 15px;
 }
-.column{
-    width: 25px;
-    height: 25px;
-    /* border: 1px black solid; */
+.column {
+  width: 24px;
+  height: 24px;
 }
-.maze{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.maze {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
