@@ -1,17 +1,56 @@
+.playground {
+  min-height: 90%;
+}
 .sketch-box {
-    height: 100%;
-    width: 100%;
-    background-color: darkgrey;
-    /* margin: 10px 0px; */
-    padding: 10px 10px;
-    margin-left: 0px;
-    display: flex !important;
+  height: 100%;
+  width: 100%;
+  background-color: darkgrey;
+  /* margin: 10px 0px; */
+  padding: 10px 10px;
+  margin-left: 0px;
+  display: flex !important;
 }
 .boxes {
-    width: 20px;
-    background-color: #555;
-    margin: 1px 1px;
+  width: 20px;
+  background-color: #555;
+  margin: 1px 1px;
 }
 .box-values {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
+}
+.selected {
+  /* animation: processed 0.5s ease-out 0s 1 normal none; */
+}
+.swaped {
+  background-color: rgb(221, 60, 60);
+  animation: swapper 1s ease 0s 1 normal none;
+}
+
+@keyframes processed {
+  0% {
+    transform: scaleX(0.7);
+    background-color: cyan;
+  }
+  50% {
+    transform: scaleX(1.2);
+    background-color: darkcyan;
+  }
+  100% {
+    transform: scaleX(1);
+    background-color: rgb(221, 60, 60);
+  }
+}
+@keyframes swapper {
+  0% {
+    transform: scaleX(0.7);
+    background-color: cyan;
+  }
+  50% {
+    transform: scaleX(1.2);
+    background-color: darkcyan;
+  }
+  100% {
+    transform: scaleX(1);
+    background-color: rgb(221, 60, 60);
+  }
 }

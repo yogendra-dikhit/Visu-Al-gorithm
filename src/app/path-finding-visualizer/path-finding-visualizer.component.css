@@ -7,11 +7,26 @@
 .column {
   width: 24px;
   height: 24px;
+  border: 0.5px black;
+  border-top-style: solid;
+  border-left-style: solid;
 }
 
 .table {
   display: table;
   border: 1px cyan solid;
-  width: 1200px;
   padding-left: 15px;
 }
+/* max-width 640px, mobile-only styles */
+/* @media only screen and (max-width: 40em) {
+  .column {
+    width: 12px;
+    height: 12px;
+    border: 0.25px black;
+    border-top-style: solid;
+    border-left-style: solid;
+  }
+  .table {
+    width: 240px !important;
+  }
+} */

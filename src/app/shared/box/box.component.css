@@ -1,58 +1,99 @@
-.box{
-    height: 25px;
-    width: 25px;
-    border: 0.5px solid black;
+.box {
+  /* height: 25px;
+  width: 25px;
+  border: 0.5px solid black; */
 }
 
-.start-point{   
-  height: 25px;
-  width: 25px;
-  border: 0.5px solid black;
-  background-color: red !important;
-  animation: start-point-animation 1.5s ease-out 0 1 alterate forwards;
-  animation-play-state: running;
-  }
+.start-point {
+  height: 100%;
+  width: 100%;
+  /* border: 0.5px solid black; */
+  background-image: url("../../../assets/images/start-point.png");
+  background-position: center;
+  background-size: contain;
+  animation: point-animation 1s ease-out;
+}
 
-.end-point{   
-  height: 25px;
-  width: 25px;
-  border: 0.5px solid black;
-  background-color: green !important;
-  }
+.end-point {
+  height: 100%;
+  width: 100%;
+  /* border: 0.5px solid black; */
+  background-image: url("../../../assets/images/finish-point.png");
+  background-position: center;
+  background-size: contain;
+  animation: point-animation 1s ease-out;
+}
 
-.visited-point{
+.visited-point {
   height: 25px;
   width: 25px;
-  border: 0.5px solid black;   
-  background-color: yellow;
-  }
+  /* border: 0.5px solid black; */
+  background-color: #00bcd4;
+  animation: visited-animation 1s ease-out;
+}
 
-.traversed-point{   
+.traversed-point {
   height: 25px;
   width: 25px;
-  border: 0.5px solid black;
-  background-color: cyan;
-  }
+  /* border: 0.5px solid black; */
+  background-color: rgb(72, 117, 139);
+  animation: traversed-animation 1s ease-out;
+}
 
-.wall{   
-  height: 25px;
-  width: 25px;
-  border: 0.5px solid black;
-  background-color: purple;
+.wall {
+  height: 100%;
+  width: 100%;
+  /* border: 0.5px solid black; */
+  background-image: url("../../../assets/images/wall.png");
+  background-position: center;
+  background-size: contain;
+  animation: point-animation 1s ease-out;
+}
+@keyframes point-animation {
+  0% {
+    transform: scale(0.3);
   }
-  @keyframes start-point-animation{
-      0% {
-          
-          transform: scale(0.3);
-      }
-      50%{
-        height: 35px;
-        width: 35px;
-          transform: scale(1.2);
-      }
-      100%{
-        height: 25px;
-        width: 25px;
-        transform: scale(1);
-    }
+  50% {
+    transform: scale(1.2);
   }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes visited-animation {
+  0% {
+    transform: scale(0.25);
+    background-color: rgb(133, 225, 240);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1.15);
+    background-color: rgb(22, 81, 129);
+  }
+  /* 100% {
+    transform: scale(1);
+  } */
+}
+@keyframes traversed-animation {
+  0% {
+    transform: scale(0.3);
+    background-color: rgb(115, 184, 219);
+  }
+  50% {
+    transform: scale(0.75);
+    background-color: rgb(50, 82, 98);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
+/* max-width 640px, mobile-only styles */
+@media only screen and (max-width: 40em) {
+  /* .start-point {
+    width: 12px;
+    height: 12px;
+  } */
+}

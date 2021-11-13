@@ -1,10 +1,10 @@
-
-.container-fluid{
-    margin: 10px;
-    display: inline-block;
-    align-content: space-between;
-    max-width: -webkit-fill-available;
+.container-fluid {
+  margin: 10px;
+  display: inline-block;
+  align-content: space-between;
+  max-width: -webkit-fill-available;
+  min-height: 90%;
 }
-.mat-card-content{
-    display: flex;
+.mat-card-content {
+  display: flex;
 }

@@ -5,11 +5,20 @@ export async function BubbleSort() {
       j < this.boxes.length - i - 1 && this.isVisualizerRunning;
       j++
     ) {
+      this.boxes[j].class = 'selected';
+      this.boxes[j + 1].class = 'selected';
       if (this.boxes[j].height > this.boxes[j + 1].height) {
         this.swap(j, j + 1);
         await this.timer();
       }
     }
+  }
+
+  let toBeAnimated = this.boxes.filter((box) => {
+    return box.class == '' || box.class == 'selected';
+  });
+  for (let i = toBeAnimated.length; i >= 0; i--) {
+    this.boxes[i].class = 'swaped';
   }
 }
 
@@ -69,6 +78,8 @@ export function swap(i: number, j: number): void {
   let temp = this.boxes[i];
   this.boxes[i] = this.boxes[j];
   this.boxes[j] = temp;
+  this.boxes[i].class = 'swaped';
+  this.boxes[j].class = 'swaped';
 }
 
 export async function partition(lowerBound: number, upperBound: number) {

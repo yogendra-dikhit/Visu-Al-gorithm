@@ -10,7 +10,7 @@
 </app-toolbar>
 <div class="path-finder">
   <mat-card>
-    <div class="table">
+    <div class="table" [ngStyle]="{ width: gridWidth }">
       <div class="row" *ngFor="let row of grid">
         <div
           class="column"

@@ -59,7 +59,7 @@ export class SortingVisualizerComponent implements OnInit {
   changeRunnerSpeed(speedChanged: string) {
     switch (speedChanged) {
       case 'Slow':
-        this.runnerSpeed = 500;
+        this.runnerSpeed = 1000;
         break;
       case 'Medium':
         this.runnerSpeed = 250;

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Box } from '../shared/box';
 import { ToolbarComponent } from '../toolbar/toolbar.component';
 import { PathFinder } from '../shared/Algorithms/pathFinding-algorithms';
@@ -14,7 +14,7 @@ export class PathFindingVisualizerComponent implements OnInit {
   rows: any[] = [];
   columns: any[] = [];
   numberOfRows: number = 20;
-  numberOfcolumns: number = 50;
+  numberOfColumns: number = 50;
   startPoint: Box = null;
   endPoint: Box = null;
   grid: Array<Box[]> = [];
@@ -26,12 +26,40 @@ export class PathFindingVisualizerComponent implements OnInit {
   mousedown: boolean;
   pathFinder: PathFinder;
   timer = (ms: number) => new Promise((res) => setTimeout(res, ms));
+  gridWidth: string;
   constructor(private _snackBar: SnackBarService) {}
 
   ngOnInit(): void {
+    this.setScreenSize();
     this.setup();
   }
 
+  @HostListener('window:resize', ['$event'])
+  resizeHandler = (event) => {
+    console.log(event);
+    this.setScreenSize(event.currentTarget.innerWidth);
+    this.setup();
+  };
+
+  setScreenSize(width?: number) {
+    if (!width || width >= 1200) {
+      this.gridWidth = 1200 + 'px';
+      this.numberOfRows = 20;
+      this.numberOfColumns = 50;
+    } else if (width >= 768) {
+      this.gridWidth = 720 + 'px';
+      this.numberOfRows = 15;
+      this.numberOfColumns = 30;
+    } else if (width >= 300) {
+      this._snackBar.openSnackBar(
+        'Open in landscape desktop mode for better experience!',
+        'mat-accent'
+      );
+      this.gridWidth = 480 + 'px';
+      this.numberOfRows = 15;
+      this.numberOfColumns = 20;
+    }
+  }
   setup() {
     if (this.isVisualizerRunning) {
       this._snackBar.openSnackBar('Visualizer still running', 'mat-warn');
@@ -43,7 +71,7 @@ export class PathFindingVisualizerComponent implements OnInit {
     this.endPoint = null;
     for (let i = 0; i < this.numberOfRows; i++) {
       this.grid[i] = new Array();
-      for (let j = 0; j < this.numberOfcolumns; j++) {
+      for (let j = 0; j < this.numberOfColumns; j++) {
         this.grid[i].push(new Box(i, j));
       }
     }

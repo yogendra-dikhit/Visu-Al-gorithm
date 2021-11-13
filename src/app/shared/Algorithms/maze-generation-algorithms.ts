@@ -5,7 +5,7 @@ export class MazeGenerator {
   grid: Array<Array<Spot>> = [];
   DFSStack: Spot[] = [];
   isVisualizerRunning: boolean = false;
-  numberOfRows: number = 18;
+  numberOfRows: number = 20;
   numberOfColumns: number = 50;
   runnerSpeed: number = 10;
 
